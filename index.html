@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Webcam</title>
+    </head>
+    <body>
+        <video autoplay></video>
+    </body>
+    <script>
+        var video = document.querySelector('video')
+
+        const options = {
+            video:true
+        }
+
+        navigator.mediaDevices.getUserMedia(options)
+        .then(function(stream){
+            video.srcObject = stream
+        })
+        .catch((error) => {
+            console.log("An error occured ")
+        })
+    </script>
+</html>
